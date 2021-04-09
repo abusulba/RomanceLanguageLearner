@@ -7,10 +7,10 @@ import random
 
 class RomanceLanguageClassifier:
     def __init__(self):
-        self.french_lines = self.lines_extractor('textData/fra_news_2010_10K-sentences.txt').splitlines()
-        self.italian_lines = self.lines_extractor('textData/ita_news_2010_10K-sentences.txt').splitlines()
-        self.portuguese_lines = self.lines_extractor('textData/por_news_2010_10K-sentences.txt').splitlines()
-        self.spanish_lines = self.lines_extractor('textData/spa_news_2010_10K-sentences.txt').splitlines()
+        self.french_lines = self.lines_extractor('textData/fra_news_2010_10K-sentences.txt').lower().splitlines()
+        self.italian_lines = self.lines_extractor('textData/ita_news_2010_10K-sentences.txt').lower().splitlines()
+        self.portuguese_lines = self.lines_extractor('textData/por_news_2010_10K-sentences.txt').lower().splitlines()
+        self.spanish_lines = self.lines_extractor('textData/spa_news_2010_10K-sentences.txt').lower().splitlines()
         self.train(self.spanish_lines, self.french_lines, self.italian_lines, self.portuguese_lines)
 
     def lines_extractor(self, file_name):
@@ -68,6 +68,7 @@ class RomanceLanguageClassifier:
 
     def predict(self, prediction_text):
         x = 6
+        return self.classifier.classify(self.line_features(prediction_text))
         # uses classifier to predict which language the given text is in
         #
 
@@ -75,5 +76,6 @@ if __name__ == '__main__':
     count_vect = CountVectorizer()
     # x_train_counts = count_vect.fit()
     rl = RomanceLanguageClassifier()
+    print(rl.predict('yo soy una mujer muy inteligente'))
 
 
