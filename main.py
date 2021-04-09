@@ -3,6 +3,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 import nltk
 import os
+import random
 
 class RomanceLanguageClassifier:
     def __init__(self):
@@ -10,6 +11,7 @@ class RomanceLanguageClassifier:
         self.italian_lines = self.lines_extractor('textData/ita_news_2010_10K-sentences.txt').splitlines()
         self.portuguese_lines = self.lines_extractor('textData/por_news_2010_10K-sentences.txt').splitlines()
         self.spanish_lines = self.lines_extractor('textData/spa_news_2010_10K-sentences.txt').splitlines()
+        self.train(self.spanish_lines, self.french_lines, self.italian_lines, self.portuguese_lines)
 
     def lines_extractor(self, file_name):
         output = ''
@@ -21,7 +23,7 @@ class RomanceLanguageClassifier:
     def line_features(self, line):
         tokens = nltk.word_tokenize(line)
         featureset = {}
-        for word in line:
+        for word in tokens:
             featureset['contains({0})'.format(word)] = True
         featureset['çedille'] = ('ç' in line)
         featureset['grave'] = any(accent in line for accent in ('à', 'è', 'ù'))
@@ -37,8 +39,25 @@ class RomanceLanguageClassifier:
         #       ç = French/Portuguese
         #       â = French
 
-    def train(self, spanish, french, italian, portugues):
-        x = 5
+    def train(self, spanish, french, italian, portuguese):
+        dataset = []
+        for line in spanish:
+            dataset.append((self.line_features(line), 'spanish'))
+        for line in french:
+            dataset.append((self.line_features(line), 'french'))
+        for line in italian:
+            dataset.append((self.line_features(line), 'italian'))
+        for line in portuguese:
+            dataset.append((self.line_features(line), 'portuguese'))
+
+        size = int(.9 * len(dataset))
+        random.shuffle(dataset)
+        test = dataset[size:]
+        train = dataset[:size]
+
+        self.classifier = nltk.NaiveBayesClassifier.train(train)
+        print(nltk.classify.accuracy(self.classifier, test))
+        print(self.classifier.show_most_informative_features(100))
         # takes in 4 lists of lines of each language
         # calls line features on each line of the 4 languages
         # stores a list of tuples
@@ -56,5 +75,5 @@ if __name__ == '__main__':
     count_vect = CountVectorizer()
     # x_train_counts = count_vect.fit()
     rl = RomanceLanguageClassifier()
-    print(len(rl.spanish_raw))
+
 
