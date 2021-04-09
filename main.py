@@ -9,7 +9,7 @@ class RomanceLanguageClassifier:
     def __init__(self):
         self.french_lines = self.lines_extractor('textData/fra_news_2010_10K-sentences.txt').lower().splitlines()
         self.italian_lines = self.lines_extractor('textData/ita_news_2010_10K-sentences.txt').lower().splitlines()
-        self.portuguese_lines = self.lines_extractor('textData/por_news_2010_10K-sentences.txt').lower().splitlines()
+        self.portuguese_lines = self.lines_extractor('textData/por_news_2020_10K-sentences.txt').lower().splitlines()
         self.spanish_lines = self.lines_extractor('textData/spa_news_2010_10K-sentences.txt').lower().splitlines()
         self.train(self.spanish_lines, self.french_lines, self.italian_lines, self.portuguese_lines)
 
@@ -57,7 +57,7 @@ class RomanceLanguageClassifier:
 
         self.classifier = nltk.NaiveBayesClassifier.train(train)
         print(nltk.classify.accuracy(self.classifier, test))
-        print(self.classifier.show_most_informative_features(100))
+        # print(self.classifier.show_most_informative_features(100))
         # takes in 4 lists of lines of each language
         # calls line features on each line of the 4 languages
         # stores a list of tuples
@@ -76,6 +76,11 @@ if __name__ == '__main__':
     count_vect = CountVectorizer()
     # x_train_counts = count_vect.fit()
     rl = RomanceLanguageClassifier()
+    in_ = ''
+    while in_ != 'q':
+        in_ = input('Please enter text to predict: ')
+        print(rl.predict(in_))
+    
     print(rl.predict('yo soy una mujer muy inteligente'))
 
 
