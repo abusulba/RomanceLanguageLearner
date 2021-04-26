@@ -12,13 +12,36 @@ class RomanceLanguageClassifier:
         self.portuguese_lines = self.lines_extractor('textData/por_news_2020_10K-sentences.txt').lower().splitlines()
         self.spanish_lines = self.lines_extractor('textData/spa_news_2010_10K-sentences.txt').lower().splitlines()
         self.train(self.spanish_lines, self.french_lines, self.italian_lines, self.portuguese_lines)
+        
         # language tokens are the unique set of tokens from each language
         self.french_tokens = self.language_tokens(self.french_lines)
         self.italian_tokens = self.language_tokens(self.italian_lines)
         self.portuguese_tokens = self.language_tokens(self.portuguese_lines)
         self.spanish_tokens = self.language_tokens(self.spanish_lines)
-        test = list(self.spanish_tokens)
-        print(test[:50])
+        exact_sets = []
+
+        #define exact cognates (french-other)
+        self.fre_esp_exact = list(self.french_tokens & self.spanish_tokens)
+        #print(len(self.fre_esp_exact))
+        self.fre_ita_exact = list(self.french_tokens & self.italian_tokens)
+        #print(len(self.fre_ita_exact))
+        self.fre_por_exact = list(self.french_tokens & self.portuguese_tokens)
+        #print(len(self.fre_por_exact))
+
+        #define exact cognates (spanish-other)
+        # spanish-french == self.fre_esp_exact (intersection is equal)
+        self.esp_ita_exact = self.spanish_tokens & self.italian_tokens
+        #print(len(self.esp_ita_exact))
+        self.esp_por_exact = self.spanish_tokens & self.portuguese_tokens
+        #print(len(self.esp_por_exact))          ---- ESP and POR have MAX similarity
+
+        #define exact cognates (italian-other)
+        # self.ita_esp_exact = self.esp_ita_exact (intersection is equal)
+        # self.ita_fre_exact = self.fre_ita_exact (intersection is equal)
+        self.ita_por_exact = self.italian_tokens & self.portuguese_tokens
+        #print(len(self.ita_por_exact))
+        
+        
 
     def lines_extractor(self, file_name):
         output = ''
@@ -84,7 +107,10 @@ class RomanceLanguageClassifier:
         token_list = []
         for line in language_lines:
             tokens = nltk.word_tokenize(line)
-            token_list += tokens 
+            # remove numeric tokens
+            tokens = [token for token in tokens if token.isnumeric() == False]
+            token_list += tokens
+        #print(len(set(token_list)))
         return set(token_list)
 
 if __name__ == '__main__':
