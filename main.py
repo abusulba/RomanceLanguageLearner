@@ -20,27 +20,30 @@ class RomanceLanguageClassifier:
         self.spanish_tokens = self.language_tokens(self.spanish_lines)
         exact_sets = []
 
+        # set of tokens shared by all languages (mostly proper nouns and other names)
+        # we get the set difference of the intersections with all_shared to get more unique, language-specific matches
+        self.all_shared = self.italian_tokens & self.portuguese_tokens & self.spanish_tokens & self.french_tokens
+
         #define exact cognates (french-other)
-        self.fre_esp_exact = list(self.french_tokens & self.spanish_tokens)
-        #print(len(self.fre_esp_exact))
-        self.fre_ita_exact = list(self.french_tokens & self.italian_tokens)
-        #print(len(self.fre_ita_exact))
-        self.fre_por_exact = list(self.french_tokens & self.portuguese_tokens)
-        #print(len(self.fre_por_exact))
+        self.fre_esp_exact = list((self.french_tokens & self.spanish_tokens)- (self.all_shared))
+        print(len(self.fre_esp_exact))
+        self.fre_ita_exact = list((self.french_tokens & self.italian_tokens)- (self.all_shared))
+        print(len(self.fre_ita_exact))
+        self.fre_por_exact = list((self.french_tokens & self.portuguese_tokens)- (self.all_shared))
+        print(len(self.fre_por_exact))
 
         #define exact cognates (spanish-other)
         # spanish-french == self.fre_esp_exact (intersection is equal)
-        self.esp_ita_exact = self.spanish_tokens & self.italian_tokens
-        #print(len(self.esp_ita_exact))
-        self.esp_por_exact = self.spanish_tokens & self.portuguese_tokens
-        #print(len(self.esp_por_exact))          ---- ESP and POR have MAX similarity
+        self.esp_ita_exact = list((self.spanish_tokens & self.italian_tokens) - (self.all_shared))
+        print(len(self.esp_ita_exact))
+        self.esp_por_exact = list(self.spanish_tokens & self.portuguese_tokens - (self.all_shared))
+        print(len(self.esp_por_exact))      # --- ESP and POR have MAX similarity
 
         #define exact cognates (italian-other)
         # self.ita_esp_exact = self.esp_ita_exact (intersection is equal)
         # self.ita_fre_exact = self.fre_ita_exact (intersection is equal)
-        self.ita_por_exact = self.italian_tokens & self.portuguese_tokens
-        #print(len(self.ita_por_exact))
-        
+        self.ita_por_exact = list(self.italian_tokens & self.portuguese_tokens) - (self.all_shared))
+        print(len(self.ita_por_exact))
         
 
     def lines_extractor(self, file_name):
