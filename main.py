@@ -12,6 +12,13 @@ class RomanceLanguageClassifier:
         self.portuguese_lines = self.lines_extractor('textData/por_news_2020_10K-sentences.txt').lower().splitlines()
         self.spanish_lines = self.lines_extractor('textData/spa_news_2010_10K-sentences.txt').lower().splitlines()
         self.train(self.spanish_lines, self.french_lines, self.italian_lines, self.portuguese_lines)
+        # language tokens are the unique set of tokens from each language
+        self.french_tokens = self.language_tokens(self.french_lines)
+        self.italian_tokens = self.language_tokens(self.italian_lines)
+        self.portuguese_tokens = self.language_tokens(self.portuguese_lines)
+        self.spanish_tokens = self.language_tokens(self.spanish_lines)
+        test = list(self.spanish_tokens)
+        print(test[:50])
 
     def lines_extractor(self, file_name):
         output = ''
@@ -71,6 +78,14 @@ class RomanceLanguageClassifier:
         return self.classifier.classify(self.line_features(prediction_text))
         # uses classifier to predict which language the given text is in
         #
+        
+    def language_tokens(self, language_lines):
+        # tokens of the language
+        token_list = []
+        for line in language_lines:
+            tokens = nltk.word_tokenize(line)
+            token_list += tokens 
+        return set(token_list)
 
 if __name__ == '__main__':
     count_vect = CountVectorizer()
