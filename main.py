@@ -11,6 +11,7 @@ import os
 import random
 import math
 
+
 class RomanceLanguageClassifier:
     def __init__(self):
         self.french_lines = self.lines_extractor('textData/fra_news_2010_10K-sentences.txt').lower().splitlines()
@@ -53,6 +54,8 @@ class RomanceLanguageClassifier:
 
         self.translator = Translator()  # create instance of googletrans module
         self.dictionary = PyDictionary()
+
+        self.noun_cognates = self.loadNounCognates()
         
 
     def lines_extractor(self, file_name):
@@ -189,6 +192,25 @@ class RomanceLanguageClassifier:
         magA = math.sqrt(sum(c1.get(k, 0)**2 for k in terms))
         magB = math.sqrt(sum(c2.get(k, 0)**2 for k in terms))
         return dotprod / (magA * magB)
+
+    def loadNounCognates(self):
+        file = open(r"nounCognates.txt", "r")
+        lines = file.readlines()
+        updated = []
+        final = []
+        #remove tab and newline characters
+        for line in lines:
+            temp = line.replace('\t', ' ')
+            temp = temp.replace('\n', '')
+            updated.append(temp)
+        #correct updated
+        for line in updated:
+            tokens = line.split(' ')
+            tokens = [token for token in tokens if len(token) > 2 and token[0] != '(' and token[-1] != ')']
+            final.append(tokens)
+        #final format = list of lists of cognates
+        #Language Order = ['ENGLISH', 'FRENCH', 'ITALIAN', 'SPANISH', 'PORTUGUESE']
+        return final
 
 
 if __name__ == '__main__':
