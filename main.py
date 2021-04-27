@@ -24,6 +24,7 @@ class RomanceLanguageClassifier:
         self.dictionary = PyDictionary()
 
         self.noun_cognates = self.loadNounCognates()
+        self.cognate_data = self.load_cognate_data()
         
     def token_info(self):
         # language tokens are the unique set of tokens from each language
@@ -193,6 +194,17 @@ class RomanceLanguageClassifier:
         #Language Order = ['ENGLISH', 'FRENCH', 'ITALIAN', 'SPANISH', 'PORTUGUESE']
         return final
     
+    def load_cognate_data(self):
+        file = open(r'cognate_data.txt', 'r', encoding='utf-8')
+        lines = file.readlines()
+        final_lines= []
+        for line in lines:
+            tokens = nltk.word_tokenize(line)
+            final_lines.append(tokens)
+        # format: [word1, word2, 'cognate' or 'not']
+
+        return final_lines
+    
     def cognate_information(self, cognates):
         length = len(cognates)
         fr_it_score = 0
@@ -240,6 +252,23 @@ class RomanceLanguageClassifier:
         else:
             return 0
 
+    def cognate_accuracy(self, data):
+        is_cog = False
+        correct = 0
+        for example in data:
+            word1 = example[0]
+            word2 = example[1]
+
+            if example[2] == 'cognate':
+                is_cog == True
+            
+            if self.is_cognate(word1, word2) == is_cog:
+                correct += 1
+        
+        accuracy = correct / len(data)
+        return accuracy
+
+
         
 
 
@@ -249,11 +278,10 @@ if __name__ == '__main__':
     rl = RomanceLanguageClassifier()
     in_ = ''
     while in_ != 'q':
-        in_ = input('Please enter text to predict: ')
+        in_ = input('Please enter text to classify (or enter \'q\' to quit): ')
         print(rl.predict(in_))
-    rl.cognate_information(rl.noun_cognates)
+    print('Cognate guesser accuracy: ' + str(rl.cognate_accuracy(rl.cognate_data)))
+    # rl.cognate_information(rl.noun_cognates)
     translator = Translator()
-    # print(rl.cognate_score('chico', 'bambino'))
-    # print(rl.predict('yo soy una mujer muy inteligente'))
 
 
