@@ -1,0 +1,354 @@
+accident (chance event)	l'accident (m)	il caso	el caso	o acaso
+accident (mishap)	l'accident (m)	la disgrazia	la desgracia	o acidente
+account (bill)	le compte	il conto	la cuenta	a conta
+action	l'action (f)	l'azione	la acción	a açcão
+advantage	l'avantage (m)	il vantaggio	la ventaja	a vantagem
+advertisement	l'annonce (f)	l'annunzio	el anuncio	o anúncio
+advice	le conseil	il consiglio	el consejo	o conselho
+age	l'âge (m)	l'età (f)	la edad	a idade
+amusement	l'amusement (m)	il divertimento	la diversión	o divertimento
+anger	la colère	la collera	la cólera	o enfado
+angle	l'angle (m)	l'angolo	el ángulo	o ângulo
+answer	la réponse	la risposta	la respuesta	a resposta
+apology	l'excuse (f)	la scusa	la disculpa	a satisfação
+apparatus	l'appareil (m)	l'apparecchio	el aparato	o aparelho
+appetite	l'apétit (m)	l'appetito	el apetito	o apetite
+army	l'armée (f)	l'esercito	el ejército	o exército
+art	l'art (m)	l'arte (f)	el arte (m)	a arte
+assistance	l'aide (f)	l'aiuto	la ayuda	a ajuda
+attack	l'attaque (f)	l'attacco	el ataque	o ataque
+authority	l'autorité (f)	l'autorità (f)	la autoridad	a autoridade
+average	la moyenne	la media	el término medio	o têrmo médico
+bag	le sac	il sacco	el saco	o saco
+ball	la balle, le ballon	la palla	la bola	a bola
+battle	la bataille	la battaglia	la batalla	a batalha
+beauty	la beauté	la bellezza	la belleza	a beleza
+beginning	le commencement	il principio	el principio	o princípio
+birth	la naissance	la nascita	el nacimiento	o nascimento
+blot	la tache	lo sgorbio	el borrón	o borrão
+blow (hit)	le coup	il colpo	el golpe	o golpe
+bottom	le fond	il fondo	el fondo	o fundo
+burn	la brûlure	la bruciatura	la quemadura	a queimadura
+business	les affaires (f)	gli affari	los negocios	os negócios
+care	le soin	la cura	el cuidado	o cuidado
+case	le cas	il caso	el caso	o caso
+cause (grounds)	le cause	la causa	la causa	a causa
+change	le changement	il cambiamento	el cambio	a mudança
+chemistry	la chimie	la chimica	la química	a química
+choice	le choix	la scelta	la elección	a escolha
+circle	le cercle	il circolo	el círculo	o círculo
+cleanliness	la propreté	la pulizia	la limpieza	a limpeza
+color	la couleur	il colore	el color	a côr
+committee	la comité	il comitato	el comité	o comité
+company	la compagnie	la compagnia	la compañía	a companhia
+competition (commercial)	la concurrence	la concorrenza	la competencia	a concorrência
+competition (sport)	le concours	il concorso	el concurso	o concurso
+compromise	le compromis	il compromesso	el compromiso	o compromisso
+conclusion	la fin	la fine	el fin	o fim
+conduct	la conduite	la condotta	la conducta	a conduta
+confidence	la confiance	la fiducia	la confianza	a confiança
+conquest	la conquête	la conquista	la conquista	a conquista
+contact	le contact	il contatto	el contacto	o contacto
+contempt	le mépris	lo sprezzo	el desprecio	o desprêzo
+contents	le contenu	il contenuto	el contenido	o conteúdo
+country	le pays	il paese	el país	o país
+courage	le courage	il coraggio	el valor	a coragem
+cowardice	la lâcheté	la codardia	la cobardía	a cobardia
+crack	la fente	la fessura	la hendedura	a fenda
+crime	le crime	il delitto	el crimen	o crime
+crisis	la crise	la crisi	la crisis	a crise
+criticism	la critique	la critica	la crítica	a crítica
+cross	la croix	la croce	la cruz	a cruz
+crowd	la foule	la folla	la muchedumbre	a multidão
+cruelty	la cruauté	la crudeltà	la crueldad	a crueldade
+cry (yell)	le cri	il grido	el grito	o grito
+cube	le cube	il cubo	el cubo	o cubo
+curve	la courbe	la curva	la curva	a curva
+custom	la coutume	il costume	la costumbre	o costume
+cut	la coupure	il taglio	el corte	o corte
+damage	le dommage	il danno	el daño	o dano
+dance	la danse	il ballo	el baile	o baile
+danger	le danger	il pericolo	el peligro	o perigo
+death	la mort	la morte	la muerte	a morte
+debt	la dette	il debito	la deuda	a dívida
+defeat	la défaite	la disfatta	la derrota	a derrota
+defect	le défaut	il difetto	el defecto	o defeito
+defense	la défense	la difesa	la defensa	a defesa
+degree	le degré	il grado	el grado	o grau
+depth	la profondeur	la profondità	la profundidad	a profundidade
+design	le dessin	il disegno	el diseño	o desenho
+desire	le désir	il desiderio	el deseo	o desejo
+detail	le détail	il dettaglio	el detalle	o detalhe
+development	le développement	lo sviluppo	el desarrollo	o desenvolvimente
+disaster	le désastre	il disastro	el desastre	o desastre
+discovery	la découverte	la scoperta	el descubrimiento	o descobrimento
+disgust	le dégoût	lo schifo	la repugnancia	o desgôsto
+distance	la distance	la distanza	la distancia	a distância
+doubt	le doute	il dubbio	la duda	a dúvida
+dream	le rêve	il sogno	el sueño	o sonho
+drop	la goutte	la goccia	la gota	o gota
+duration	la durée	la durata	la duración	a duração
+duty	le devoir	il dovere	el deber	o dever
+edge (border)	le bord	l'orlo	el borde	a borda
+effort	l'effort (m)	lo sforzo	el esfuerzo	o esfôrco
+electricity	l'électricité	l'elettricità	la electricidad	a electricidade
+employment	l'emploi (m)	l'impiego	el empleo	o emprêgo
+encounter (meeting)	la rencontre	l'incontro	el encuentro	o encontro
+end (extremity)	le bout	l'estremità	el extremo	a extremidade
+enemy	l'ennemi (m)	il nemico	el enemigo	o inimigo
+enterprise	l'entreprise (f)	l'impresa	la empresa	a emprêsa
+entrance	l'entrée (f)	l'entrata	la entrada	a entrada
+environment	le milieu	l'ambiente (m)	el ambiente	o ambiente
+envy	l'envie (f)	l'invidia	la envidia	a inveja
+equality	l'égalité (f)	l'uguaglianza	la igualdad	a igualdade
+error	l'erreur (f)	l'errore (m)	el error	o êrro
+event	l'événement  (f)	l'avvenimento	el acontecimiento	o acontecimento
+examination	l'examen (m)	l'esame (m)	el examen	o exame
+example	l'exemple (m)	l'esempio	el ejemplo	o exemplo
+exchange	l'échange (m)	il cambio	el cambio	a troca
+exhibition	l'exposition (f)	l'esposizione	la exposición	a exposiçao
+existence	l'existence (f)	l'esistenza	la existencia	a existência
+expense	les frais (m)	le spese	los gastos	os gastos
+explanation	l'explication (f)	la spiegazione	la explicación	a explicaçâo
+fact	le fait	il fatto	el hecho	o facto
+fall	la baisse	la caduta	la caída	a baixa
+fear	la peur, la crainte	la paura	el temor, el miedo	o receio, o medo
+flight	le vol	il volo	el vuelo	o vôo
+fold	le pli	la piega	el pliegue	a dobra
+food	la nourriture	il cibo	el alimento	o alimento
+force	la force	la forza	la fuerza	a fôrca
+friend	l'ami (m)	l'amico (m)	el amigo	o amigo
+friendship	l'amitié (f)	l'amicizia	la amistad	a amizade
+front	le front	il fronte	el frente	a frente
+frontier	la frontière	la frontiera	la frontera	a fronteira
+fuel	le combustible	il combustibile	el combustible	o combustível
+future	l'avenir (m)	l'avvenire (m)	el futuro	o porvir
+game	le jeu	il giuoco	el juego	o jôgo
+gesture	le geste	il gesto	el gesto	o gesto
+gland	la glande	la glandola	la glándula	a glândula
+government	le gouvernement	il governo	el gobierno	o govêrno
+gratitude	la reconnaissance	la gratitudine	la gratitud	a gratidão
+group	le groupe	il gruppo	el grupo	o grupo
+growth	la croissance	la crescita	el crecimiento	o crescimento
+half	la moitié	la metà	la mitad	a metade
+happiness	le bonheur	la felicità	la felicidad	a felicidade
+haste	la hâte	la fretta	la prisa	a pressa
+hate	la haine	l'odio	el odio	o ódio
+health	la santé	la salute	la salud	a saúde
+heap	le tas	il mucchio	el montón	o mantão
+hearing	l'ouïe (f)	l'udito	el oído	o ouvido
+heat	la chaleur	il calore	el calor	o calor
+height	la hauteur	l'altura	la altura	a altura
+history	l'histoire (f)	la storia	la historia	a história
+hole	le trou	il buco	el agujero	o buraco
+honor	l'honneur (m)	l'onore (m)	el honor	a honra
+hope	l'espoir (m)	la speranza	la esperanza	a esperança
+hunger	la faim	la fame	el hambre	a fome
+idea	l'idée (f)	l'idea	la idea	a ideia
+improvement	l'amélioration (f)	il miglioramento	el mejoramiento	o melhoramento
+impulse	l'impulsion (f)	l'impulso	el impulso	o impulso
+inhabitant	l'habitant (m)	l'abitante	el habitante	o habitante
+instrument	l'instrument (m)	lo strumento	el instrumento	o instrumento
+insurance	l'assurance (f)	l'assicurazione (f)	el seguro	o seguro
+interest (attention)	l'intérêt (m)	l'interesse (m)	el interés	o interêsse
+interest (return)	l'intérêt (m)	l'interesse (m)	el rédito	o juro
+jealousy	la jalousie	la gelosia	los celos	o ciume
+joke	la plaisanterie	lo scherzo	la broma	o gracejo
+journey	le voyage	il viaggio	el viaje	a viagem
+joy	la joie	la gioia	la alegría	a alegria
+judgment	le jugement	il giudizio	el juicio	o juízo
+jump	le saut	il salto	el salto	o salto
+kind (species)	l'espèce (f)	la specie	la especie	a espécie
+kind (type)	le genre	il genere	el género	o género
+kiss	le baiser	il bacio	el beso	o beijo
+knot	le nœud	il nodo	el nudo	o nó
+knowledge	la connaissance	la conoscenza	el conocimiento	o conhecimento
+language (tongue)	la langue	la lingua	la lengua	a língua
+language (expression)	le langage	il linguaggio	el idioma, el lenguaje	a linguagem
+laughter	le rire	il riso	la risa	o riso
+law	la loi	la legge	la ley	a lei
+laziness	la paresse	la pigrizia	la pereza	a preguiça
+lecture	la conférence	la conferenza	la conferencia	a conferência
+length	la longueur	la lunghezza	la longitud	o comprimento
+lesson	la leçon	la lezione	la lección	a lição
+level	le niveau	il livello	el nivel	o nível
+lie	le mensonge	la bugia	la mentira	a mentira
+life	la vie	la vita	la vida	a vida
+line	la ligne	la linea	la línea	a linha
+liquid	le liquide	il liquido	el líquido	o líquido
+list	la liste	la lista	la lista	a lista
+load	la charge	il carico	la carga	a carga
+look	le regard	lo sguardo	la mirada	a olhadela
+loss	la perte	la perdita	la pérdida	a perda
+love	l'amour (m)	l'amore (m)	el amor	o amor
+luxury	le luxe	il lusso	el lujo	o luxo
+machine	la machine	la macchina	la máquina	a máquina
+majority	la majorité	la maggioranza	la mayoría	a maioria
+manager	le directeur	il direttore	el director	o director
+manner	la manière, le façon	la maniera, il modo	la manera, el modo	a maneira, a modo
+mark	la marque	la marca	la marca	a marca
+mass	la masse	la massa	la masa	a massa
+material	le matériel	il materiale	el material	o material
+matter	la matière	la materia	la materia	a matéria
+means	le moyen	il mezzo	el medio	o meio
+measure	la mesure	la misura	la medida	a medida
+meeting	la réunion	la riunione	el reunión	a reunião
+member	le membre	il membro	el miembro	o membro
+memory	la mémoire	la memoria	la memoria	a memória
+method	la méthode	il metodo	el método	o método
+middle	le centre, le milieu	il centro, il mezzo	el centro, el medio	o centro, o meio
+minority	la minorité	la minorità	la minoría	a menoridade
+mixture	le mélange	la mistura	la mezcla	a mistura
+money	l'argent (m)	il denaro	el dinero	o dinheiro
+mood	l'humeur (f)	l'umore (m)	el humor	o humor
+movement	le mouvement	il movimento	el movimiento	o movimento
+native land	la patrie	la patria	la patria	a pátria
+nature	la nature	la natura	la naturaleza	a natureza
+navy	la marine	la marina	la marina	a marinha
+noise	le bruit	il rumore	el ruido	o ruído
+notice (warning)	l'avis (m)	l'avviso	el aviso	o aviso
+number (amount)	le nombre	il numero	el número	o número
+number (numeral)	le numéro	il numero	el número	o número
+object	l'objet (m)	l'oggetto	el objeto	o objecto
+offer	l'offre (f)	l'offerta	la oferta	a oferta
+order (arrangement)	l'ordre (m)	l'ordine (m)	el orden	a ordem
+order (command)	l'ordre (m)	l'ordine (m)	la orden	a ordem
+order (goods)	la commande	l'ordinazione (f)	el pedido	a encomenda
+origin	l'origine (f)	l'origine (f)	el origen	a origem
+owner	le propriétaire	il proprietario	el propietario	o proprietário
+pain (suffering)	la douleur	il dolore	el dolor	a dor
+painting	la peinture	la pittura	la pintura	a pintura
+part (of whole)	la partie	la parte	la parte	a parte
+party (political)	le parti	il partito	el partido	o partido
+past	le passé	il passato	el pasado	o passado
+peace	la paix	la pace	la paz	a paz
+people (persons)	les gens	la gente	la gente	a gente
+people (community)	le peuple	il popolo	el pueblo	o povo
+person	la personne	la persona	la persona	a pessoa
+piece (fragment)	le morceau	il pezzo	el pedazo	a peça
+place (spot)	l'endroit (m)	il luogo	el lugar	o lugar
+plant	la plante	la pianta	la planta	a planta
+pleasure	le plaisir	il piacere	el placer	o prazer
+poetry	la poésie	la poesia	la poesía	a poesia
+point (dot)	le point	il punto	el punto	o ponto
+point (sharp end)	la pointe	la punta	la punta	a ponta
+poison	le poison	il veleno	el veneno	o venemo
+politeness	la politesse	la cortesia	la cortesía	a cortesia
+politics	la politique	la politica	la política	a política
+population	la population	la popolazione	la población	a população
+poverty	la pauvreté	la povertà	la pobreza	a pobreza
+power	le pouvoir	il potere	el poder	o poder
+practice (exercise)	l'exercice (f)	l'esercizio	el ejercicio	o exercício
+prejudice	le prejugé	il pregiudizio	el perjuicio	o prejuízo
+present (gift)	le cadeau	il regalo	el regalo	o presente, a dádiva
+pressure	la pression	la pressione	la presión	a pressão
+price	le prix	il prezzo	el precio	o preço
+prize	le prix	il premio	el premio	o prêmio
+problem	le problème	il problema	el problema	o problema
+product	le produit	il prodotto	el producto	o produto
+profit	le profit	il profitto	el provecho	o lucro
+progress	le progrès	il progresso	el progreso	o progresso
+proof	la preuve	la prova	le prueba	a prova
+property	la propriété	la proprietà	la propiedad	a propriedade
+protest	la protestation	la protesta	la protesta	o protesto
+punishment	la punition	la punizione	el castigo	o castigo
+purchase	l'achat (m)	la compera	la compra	a compra
+purpose	le but	il proposito	el objeto	o propósito
+question	la question	la domanda	la pregunta	a pergunta
+race (breed)	la race	la razza	la raza	a raça
+ray	le rayon	il raggio	el rayo	o raio
+reason	la raison	la ragione	la razón	a razão
+receipt	le reçu	la ricevuta	el recibo	o recibo
+recollection	le souvenir	il ricordo	el recuerdo	a lembrança
+refusal	le refus	il rifiuto	la negativa	a recusa
+remainder	le reste	il resto	el resto	o resto
+remedy	le remède	il remedio	el remedio	o remédio
+report (account)	le rapport	il rapporto	el informe	a relação
+request	la demande	il richiesta	la petición	a petição
+respect	le respect	il rispetto	el respeto	o respeito
+rest	le repos	il riposo	el descanso	o descanso
+result	le résultat	il risultato	el resultado	o resultado
+revenge	la vengeance	la vendetta	la venganza	a vingança
+reward	la récompense	la ricompensa	la recompensa	a recompensa
+right (just claim)	le droit	il diritto	el derecho	o direito
+risk	le risque	il rischio	el riesgo	o risco
+rule (regulation)	la règle	la regola	la regla	a regra
+sadness	la tristesse	la tristezza	la tristeza	a tristeza
+safety	la sureté	la sicurezza	la seguridad	a segurança
+sale	la vente	la vendita	la venta	a venda
+sample	l'échantillon (m)	il campione	la muestra	a amostra
+scale (measure)	l'échelle (f)	la scala	la escala	a escala
+science	la science	la scienza	la ciencia	a sciência
+sense (meaning)	le sens	il senso	el sentido	o sentido
+sentence (group of words)	la phrase	la frase	la frase	a frase
+sex	le sexe	il sesso	el sexo	o sexo
+shame	la honte	la vergogna	la vergüenza	a vergonha
+side	le côté	il lato	el lado	o lado
+sight	la vue	la vista	la vista	a vista
+sign	le signe	il segno	la señal	o sinal
+size	la grandeur	la grandezza	el tamaño	o tamanho
+sleep	le sommeil	il sonno	el sueño	o sono
+smell	l'odeur (f)	l'odore (m)	el olor	o cheiro
+smile	le sourir	il sorriso	la sonrisa	o sorriso
+song	la chanson	la canzone	la canción	a canção
+sound	le son	il suono	el sonido	o som
+space	l'espace (m)	lo spazio	el espacio	o espaço
+speech (ability)	la parole	la parola	el habla (f)	a fala
+speech (discourse)	le discours	il discorso	el discurso	o discurso
+speed	la vitesse	la velocità	la velocidad	a velocidade
+sport	le sport	lo sport	el deporte	o desporte
+square	le carré	il quadrato	el cuadrado	o quadrado
+state	l'état (m)	lo stato	el estado	o estado
+step	le passé	il passo	el paso	o passo
+strike	la grève	lo sciopero	la huelga	a greve
+struggle	la lutte	la lotta	la lucha	a luta
+study	l'étude (f)	lo studio	el estudio	o estudo
+success	le succès	il successo	el éxito	o êxito
+suggestion	la suggestion	il suggerimento	la sugerencia	a sugestão
+sum	la somme	la somma	la suma	a soma
+summary	le résumé	il sommario	el resumen	o sumário
+summit	le sommet	la cima	la cumbre	o cume
+surface	la surface	la superficie	la superficie	a superfície
+surprise	la surprise	la sorpresa	la sorpresa	a surpresa
+suspicion	le soupçon	il sospetto	la sospecha	a suspeita
+swindle	l'escroquerie (f)	lo scroccone	la estafa	a burla
+system	le système	il sistema	el sistema	o sistema
+task	la tâche	il compito	la tarea	a tarefa
+taste	le goût	il gusto	el gusto	o gôsto
+tax	l'impôt (m)	la tassa	el impuesto	o imposto
+test	l'épreuve (f)	la prova	la prueba	a prova
+thanks	les remerciements (m)	le grazie	las gracias	as graças
+theft	le vol	il furto	el robo	o furto
+thing	la chose	la cosa	la cosa	a coisa
+thirst	la soif	la sete	la sed	a sêde
+tone	le ton	il tono	el tono	o tom
+touch	le toucher	il tatto	el tacto	o toque
+toy	le jouet	il giocattolo	el juguete	o brinquedo
+trade	le commerce	il commercio	el comercio	o comércio
+translation	la traduction	la traduzione	la traducción	a tradução
+transport	le transport	il trasporto	el transporte	o transporte
+treatment	le traîtement	il trattamento	el tratamiento	o tratamento
+treaty	le traité	il trattato	el tratado	o tratado
+trial	le procès	il processo	el proceso	o processo
+truth	la vérité	la verità	la verdad	a verdade
+use	l'emploi (m)	l'uso	el uso	o uso
+value	la valeur	il valore	el valor	o valor
+vessel	le vaisseau	il vaso	la vasija	o vaso
+victory	la victoire	la vittoria	la victoria	a vítoria
+voice	la voix	la voce	la voz	a voz
+wages (salary)	le salaire	il salario	el salario	o salário
+walk	la promenade	la passeggiata	el paseo	o passeio
+want (lack)	le manque	la mancanza	la falta	a falta
+war	la guerre	la guerra	la guerra	a guerra
+wealth	la richesse	la ricchezza	la riqueza	a riqueza
+weapon	l'arme (f)	l'arma	el arma (f)	a arma
+weight	le poids	il peso	el peso	o pêso
+width	la largeur	la larghezza	la anchura	a largura
+will	la volonté	la volontà	la voluntad	a vontade
+wish	le souhait	il desiderio	el deseo	o desejo
+word	le mot	la parola	la palabra	a palavra
+work (achievement)	l'œuvre (m)	l'opera	la obra	a obra
+work (exertion)	le travail	il lavoro	el trabajo	o trabalho
+world	le monde	il mondo	el mundo	o mundo
+youth	la jeunesse	la gioventù	la juventud	a juventude
+zeal	le zèle	lo zelo	el celo	o zêlo
