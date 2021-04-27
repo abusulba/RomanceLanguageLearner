@@ -155,16 +155,8 @@ class RomanceLanguageClassifier:
         en_word2 = self.translator.translate(word2).text
         
         print(en_word1 + " " + en_word2)
-        if(en_word1 == en_word2):   # if meaning is exact same, full meaning score
-            meaning_score = 1
-        else:
-            word1_syns = self.dictionary.synonym(en_word1)
-            word2_syns = self.dictionary.synonym(en_word2)
-            
-            print(word1_syns)
-            print(word2_syns)
-
-            meaning_score = self.cosine_similarity(word1_syns, word2_syns)
+        if(en_word1 != en_word2):   # if meaning is not exact same, return 0
+            return 0
 
         dist = self.lexical_distance(word1, word2)   # finds how lexically similar words are
         
@@ -177,21 +169,8 @@ class RomanceLanguageClassifier:
         spelling_score = 1 - (dist / len(longer))      # final score based on ratio of longer word
 
         print("spelling score: " + str(spelling_score))
-        print("meaning score: " + str(meaning_score))
-
-        final_score = .5 * meaning_score + .5 * spelling_score
         
-        return final_score
-    
-    def cosine_similarity(self, l1, l2):
-        c1 = Counter(l1)
-        c2 = Counter(l2)
-
-        terms = set(c1).union(c2)
-        dotprod = sum(c1.get(k, 0) * c2.get(k, 0) for k in terms)
-        magA = math.sqrt(sum(c1.get(k, 0)**2 for k in terms))
-        magB = math.sqrt(sum(c2.get(k, 0)**2 for k in terms))
-        return dotprod / (magA * magB)
+        return spelling_score
 
     def loadNounCognates(self):
         file = open(r"nounCognates.txt", "r")
