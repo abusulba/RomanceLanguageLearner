@@ -168,7 +168,7 @@ class RomanceLanguageClassifier:
     
     def is_cognate(self, word1, word2, known_cognate=False):
         score = self.cognate_score(word1, word2, known_cognate)
-        threshold = .3
+        threshold = .4
         if score > threshold:
             return True
         
