@@ -19,7 +19,13 @@ class RomanceLanguageClassifier:
         self.portuguese_lines = self.lines_extractor('textData/por_news_2020_10K-sentences.txt').lower().splitlines()
         self.spanish_lines = self.lines_extractor('textData/spa_news_2010_10K-sentences.txt').lower().splitlines()
         self.train(self.spanish_lines, self.french_lines, self.italian_lines, self.portuguese_lines)
+
+        self.translator = Translator()  # create instance of googletrans module
+        self.dictionary = PyDictionary()
+
+        self.noun_cognates = self.loadNounCognates()
         
+    def token_info(self):
         # language tokens are the unique set of tokens from each language
         self.french_tokens = self.language_tokens(self.french_lines)
         self.italian_tokens = self.language_tokens(self.italian_lines)
@@ -52,12 +58,6 @@ class RomanceLanguageClassifier:
         self.ita_por_exact = list((self.italian_tokens & self.portuguese_tokens) - (self.all_shared))
         print(len(self.ita_por_exact))
 
-        self.translator = Translator()  # create instance of googletrans module
-        self.dictionary = PyDictionary()
-
-        self.noun_cognates = self.loadNounCognates()
-        
-
     def lines_extractor(self, file_name):
         output = ''
         if os.path.exists(file_name):  # file already exists
@@ -77,10 +77,6 @@ class RomanceLanguageClassifier:
         featureset['spanish-special'] = any(accent in line for accent in ('ñ', '¿', '¡'))
         featureset['tildes'] = any(accent in line for accent in ('ã', 'õ'))
         return featureset
-
-        # line features include:
-        #   contains{word} = true
-        #   existence of language specific characters
 
     def train(self, spanish, french, italian, portuguese):
         dataset = []
@@ -110,10 +106,8 @@ class RomanceLanguageClassifier:
         # initialize classifier and train on 70%? of the data
 
     def predict(self, prediction_text):
-        x = 6
         return self.classifier.classify(self.line_features(prediction_text))
         # uses classifier to predict which language the given text is in
-        #
         
     def language_tokens(self, language_lines):
         # tokens of the language
@@ -146,7 +140,7 @@ class RomanceLanguageClassifier:
         
         return previous_row[-1]
     
-    def cognate_score(self, word1, word2):
+    def cognate_score(self, word1, word2, known_cognate=False):
         final_score = 0
         meaning_score = 0
         spelling_score = 0
@@ -154,8 +148,8 @@ class RomanceLanguageClassifier:
         en_word1 = self.translator.translate(word1).text
         en_word2 = self.translator.translate(word2).text
         
-        print(en_word1 + " " + en_word2)
-        if(en_word1 != en_word2):   # if meaning is not exact same, return 0
+        # print(en_word1 + " " + en_word2)
+        if not known_cognate and en_word1 != en_word2:   # if meaning is not exact same, return 0
             return 0
 
         dist = self.lexical_distance(word1, word2)   # finds how lexically similar words are
@@ -168,12 +162,20 @@ class RomanceLanguageClassifier:
         
         spelling_score = 1 - (dist / len(longer))      # final score based on ratio of longer word
 
-        print("spelling score: " + str(spelling_score))
+        # print("spelling score: " + str(spelling_score))
         
         return spelling_score
+    
+    def is_cognate(self, word1, word2, known_cognate=False):
+        score = self.cognate_score(word1, word2, known_cognate)
+        threshold = .3
+        if score > threshold:
+            return True
+        
+        return False
 
     def loadNounCognates(self):
-        file = open(r"nounCognates.txt", "r")
+        file = open(r"nounCognates.txt", "r", encoding='utf-8')
         lines = file.readlines()
         updated = []
         final = []
@@ -190,18 +192,68 @@ class RomanceLanguageClassifier:
         #final format = list of lists of cognates
         #Language Order = ['ENGLISH', 'FRENCH', 'ITALIAN', 'SPANISH', 'PORTUGUESE']
         return final
+    
+    def cognate_information(self, cognates):
+        length = len(cognates)
+        fr_it_score = 0
+        fr_es_score = 0
+        fr_po_score = 0
+        it_es_score = 0
+        it_po_score = 0
+        es_po_score = 0
+
+        for cognate in cognates:
+            if len(cognate) < 5:
+                continue
+            
+            en_word = cognate[0]
+            fr_word = cognate[1]
+            it_word = cognate[2]
+            es_word = cognate[3]
+            po_word = cognate[4]
+
+            fr_it_score += self.score_val(self.is_cognate(fr_word, it_word, known_cognate=True))
+            fr_es_score += self.score_val(self.is_cognate(fr_word, es_word, known_cognate=True))
+            fr_po_score += self.score_val(self.is_cognate(fr_word, po_word, known_cognate=True))
+            it_es_score += self.score_val(self.is_cognate(it_word, es_word, known_cognate=True))
+            it_po_score += self.score_val(self.is_cognate(it_word, po_word, known_cognate=True))
+            es_po_score += self.score_val(self.is_cognate(es_word, po_word, known_cognate=True))
+    
+        fr_it_score /= length
+        fr_es_score /= length
+        fr_po_score /= length
+        it_es_score /= length
+        it_po_score /= length
+        es_po_score /= length
+
+        print("French and Italian overlap: {0}".format(fr_it_score))
+        print("French and Spanish overlap: {0}".format(fr_es_score))
+        print("French and Portuguese overlap: {0}".format(fr_po_score))
+        print("Italian and Spanish overlap: {0}".format(it_es_score))
+        print("Italian and Portuguese overlap: {0}".format(it_po_score))
+        print("Spanish and Portuguese overlap: {0}".format(es_po_score))
+
+
+    def score_val(self, check):   # helper function to simplify code for cognate data
+        if check:
+            return 1
+        else:
+            return 0
+
+        
 
 
 if __name__ == '__main__':
-    count_vect = CountVectorizer()
+    # count_vect = CountVectorizer()
     # x_train_counts = count_vect.fit()
     rl = RomanceLanguageClassifier()
     in_ = ''
     while in_ != 'q':
         in_ = input('Please enter text to predict: ')
         print(rl.predict(in_))
+    rl.cognate_information(rl.noun_cognates)
     translator = Translator()
-    print(rl.cognate_score('chico', 'bambino'))
+    # print(rl.cognate_score('chico', 'bambino'))
     # print(rl.predict('yo soy una mujer muy inteligente'))
 
 
