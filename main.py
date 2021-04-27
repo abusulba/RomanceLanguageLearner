@@ -1,10 +1,4 @@
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import Pipeline
-
 from googletrans import Translator
-from PyDictionary import PyDictionary
-from collections import Counter
 
 import nltk
 import os
@@ -21,7 +15,6 @@ class RomanceLanguageClassifier:
         self.train(self.spanish_lines, self.french_lines, self.italian_lines, self.portuguese_lines)
 
         self.translator = Translator()  # create instance of googletrans module
-        self.dictionary = PyDictionary()
 
         self.noun_cognates = self.loadNounCognates()
         self.cognate_data = self.load_cognate_data()
@@ -90,21 +83,14 @@ class RomanceLanguageClassifier:
         for line in portuguese:
             dataset.append((self.line_features(line), 'portuguese'))
 
-        size = int(.9 * len(dataset))
+        size = int(.9 * len(dataset))     # train on 90% of the data, test on 10%
         random.shuffle(dataset)
         test = dataset[size:]
         train = dataset[:size]
 
         self.classifier = nltk.NaiveBayesClassifier.train(train)
-        print(nltk.classify.accuracy(self.classifier, test))
-        # print(self.classifier.show_most_informative_features(100))
-        # takes in 4 lists of lines of each language
-        # calls line features on each line of the 4 languages
-        # stores a list of tuples
-        #   --> (line_features(line), language)
-        #
-        # combine list of tuples for each language and shuffle
-        # initialize classifier and train on 70%? of the data
+        self.lang_classifier_accuracy = nltk.classify.accuracy(self.classifier, test)
+
 
     def predict(self, prediction_text):
         return self.classifier.classify(self.line_features(prediction_text))
@@ -176,7 +162,7 @@ class RomanceLanguageClassifier:
         return False
 
     def loadNounCognates(self):
-        file = open(r"nounCognates.txt", "r", encoding='utf-8')
+        file = open(r"textData/nounCognates.txt", "r", encoding='utf-8')
         lines = file.readlines()
         updated = []
         final = []
@@ -195,7 +181,7 @@ class RomanceLanguageClassifier:
         return final
     
     def load_cognate_data(self):
-        file = open(r'cognate_data.txt', 'r', encoding='utf-8')
+        file = open(r'textData/cognate_data.txt', 'r', encoding='utf-8')
         lines = file.readlines()
         final_lines= []
         for line in lines:
@@ -269,19 +255,15 @@ class RomanceLanguageClassifier:
         return accuracy
 
 
-        
-
-
 if __name__ == '__main__':
-    # count_vect = CountVectorizer()
-    # x_train_counts = count_vect.fit()
     rl = RomanceLanguageClassifier()
     in_ = ''
     while in_ != 'q':
         in_ = input('Please enter text to classify (or enter \'q\' to quit): ')
-        print(rl.predict(in_))
+        if(in_ != 'q'):
+            print(rl.predict(in_))
+    print('Language classifier accuracy: ' + str(rl.lang_classifier_accuracy))
     print('Cognate guesser accuracy: ' + str(rl.cognate_accuracy(rl.cognate_data)))
-    # rl.cognate_information(rl.noun_cognates)
-    translator = Translator()
+    rl.cognate_information(rl.noun_cognates)
 
 
