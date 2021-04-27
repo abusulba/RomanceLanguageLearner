@@ -163,7 +163,7 @@ class RomanceLanguageClassifier:
 
             meaning_score = self.cosine_similarity(word1_syns, word2_syns)
 
-        dist = self.lexical_distance(word1, word2)
+        dist = self.lexical_distance(word1, word2)   # finds how lexically similar words are
         
         longer = ''
         if len(word1) > len(word2):
@@ -171,7 +171,7 @@ class RomanceLanguageClassifier:
         else:
             longer = word2
         
-        spelling_score = 1 - (dist / len(longer))
+        spelling_score = 1 - (dist / len(longer))      # final score based on ratio of longer word
 
         print("spelling score: " + str(spelling_score))
         print("meaning score: " + str(meaning_score))
