@@ -1,9 +1,15 @@
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
+
+from googletrans import Translator
+from PyDictionary import PyDictionary
+from collections import Counter
+
 import nltk
 import os
 import random
+import math
 
 class RomanceLanguageClassifier:
     def __init__(self):
@@ -42,8 +48,11 @@ class RomanceLanguageClassifier:
         #define exact cognates (italian-other)
         # self.ita_esp_exact = self.esp_ita_exact (intersection is equal)
         # self.ita_fre_exact = self.fre_ita_exact (intersection is equal)
-        self.ita_por_exact = list(self.italian_tokens & self.portuguese_tokens) - (self.all_shared))
+        self.ita_por_exact = list((self.italian_tokens & self.portuguese_tokens) - (self.all_shared))
         print(len(self.ita_por_exact))
+
+        self.translator = Translator()  # create instance of googletrans module
+        self.dictionary = PyDictionary()
         
 
     def lines_extractor(self, file_name):
@@ -116,7 +125,7 @@ class RomanceLanguageClassifier:
 
     def lexical_distance(self, s1, s2):
         if len(s1) < len(s2):
-            return lexical_distance(s2, s1)   # longer string goes first
+            return self.lexical_distance(s2, s1)   # longer string goes first
 
         # len(s1) >= len(s2)
         if len(s2) == 0:
@@ -133,6 +142,54 @@ class RomanceLanguageClassifier:
             previous_row = current_row
         
         return previous_row[-1]
+    
+    def cognate_score(self, word1, word2):
+        final_score = 0
+        meaning_score = 0
+        spelling_score = 0
+
+        en_word1 = self.translator.translate(word1).text
+        en_word2 = self.translator.translate(word2).text
+        
+        print(en_word1 + " " + en_word2)
+        if(en_word1 == en_word2):   # if meaning is exact same, full meaning score
+            meaning_score = 1
+        else:
+            word1_syns = self.dictionary.synonym(en_word1)
+            word2_syns = self.dictionary.synonym(en_word2)
+            
+            print(word1_syns)
+            print(word2_syns)
+
+            meaning_score = self.cosine_similarity(word1_syns, word2_syns)
+
+        dist = self.lexical_distance(word1, word2)
+        
+        longer = ''
+        if len(word1) > len(word2):
+            longer = word1
+        else:
+            longer = word2
+        
+        spelling_score = 1 - (dist / len(longer))
+
+        print("spelling score: " + str(spelling_score))
+        print("meaning score: " + str(meaning_score))
+
+        final_score = .5 * meaning_score + .5 * spelling_score
+        
+        return final_score
+    
+    def cosine_similarity(self, l1, l2):
+        c1 = Counter(l1)
+        c2 = Counter(l2)
+
+        terms = set(c1).union(c2)
+        dotprod = sum(c1.get(k, 0) * c2.get(k, 0) for k in terms)
+        magA = math.sqrt(sum(c1.get(k, 0)**2 for k in terms))
+        magB = math.sqrt(sum(c2.get(k, 0)**2 for k in terms))
+        return dotprod / (magA * magB)
+
 
 if __name__ == '__main__':
     count_vect = CountVectorizer()
@@ -142,7 +199,8 @@ if __name__ == '__main__':
     while in_ != 'q':
         in_ = input('Please enter text to predict: ')
         print(rl.predict(in_))
-    
-    print(rl.predict('yo soy una mujer muy inteligente'))
+    translator = Translator()
+    print(rl.cognate_score('chico', 'bambino'))
+    # print(rl.predict('yo soy una mujer muy inteligente'))
 
 
