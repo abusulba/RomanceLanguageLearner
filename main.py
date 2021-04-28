@@ -155,7 +155,7 @@ class RomanceLanguageClassifier:
     
     def is_cognate(self, word1, word2, known_cognate=False):
         score = self.cognate_score(word1, word2, known_cognate)
-        threshold = .4
+        threshold = .3
         if score > threshold:
             return True
         
@@ -246,9 +246,11 @@ class RomanceLanguageClassifier:
             word2 = example[1]
 
             if example[2] == 'cognate':
-                is_cog == True
+                is_cog = True
+            else:
+                is_cog = False
             
-            if self.is_cognate(word1, word2) == is_cog:
+            if self.is_cognate(word1, word2, True) == is_cog:
                 correct += 1
         
         accuracy = correct / len(data)
